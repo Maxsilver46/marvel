@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marvel</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll(".heroes");
+        images.forEach((image) => {
+          const audio = new Audio(image.getAttribute("data-audio"));
+
+          image.addEventListener("mouseenter", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+
+          image.addEventListener("mouseleave", () => {
+            audio.pause();
+          });
+        });
+      });
+    </script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: monospace;
+        box-sizing: border-box;
+      }
+      .description {
+        font-size: 30px;
+        width: 80%;
+        color: #000;
+        padding-right: 10%;
+        padding-left: 10%;
+      }
+      .heroes {
+        width: 24%;
+        height: 500px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 15px;
+        margin: 20px;
+        border: solid #fff 3px;
+      }
+      .template {
+        margin: 4px 0 8px 0;
+        display: flex;
+        align-items: center;
+        /* margin: 20px; */
+        /* border-radius: 20px; */
+      }
+      .title {
+        width: 100%;
+        text-align: center;
+        font-size: 100px;
+        padding: 50px 0 50px 0;
+        font-weight: bolder;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        background-color: #000;
+        color: #cf0e0e;
+      }
+      .x-men {
+        display: flex;
+        /* width: 100%; */
+        padding: 0.5% 0.5% 0;
+        gap: 0.5%;
+        justify-content: center;
+      }
+      .column {
+        width: 40%;
+        flex: 1;
+        border-radius: 20px;
+        display: flex;
+        gap: auto;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .x-men-description {
+        font-size: 30px;
+        width: 100%;
+        color: #ffffff;
+        padding: 5% 10%;
+        text-align: justify;
+      }
+      .x-men-name {
+        display: block;
+        text-align: center;
+        font-size: 35px;
+        color: #fff;
+        text-decoration-line: underline;
+        padding-bottom: 30px;
+      }
+      .x-men-title {
+        width: 100%;
+        text-align: center;
+        font-size: 100px;
+        padding: 50px 0 50px 0;
+        font-weight: bolder;
+        font-family: "Trebuchet MS";
+        background-color: #010101;
+        color: #ffffff;
+      }
+      .x-men-heroes {
+        width: 40%;
+        border-radius: 15px;
+        border: solid #fff 3px;
+        margin: 6% 6% 1%;
+      }
+    </style>
+  </head>
+  <body style="background-color: #fed9b7">
+    <img
+      src="./resources/avengers.jpg"
+      alt="Marvel Logo"
+      width="100%"
+      height="100%"
+    />
+    <div class="title">THE AVENGERS</div>
+    <div class="template" style="background-color: #d63230">
+      <img
+        src="./resources/captain_ameica.webp"
+        alt="Captain America Image"
+        class="heroes"
+        data-audio="resources/i-can-do-this-all-day.mp3"
+      />
+      <p class="description">
+        <b>Captain America (Steve Rogers):</b>
+        A super-soldier from World War II who embodies courage, honor, and
+        selflessness. Wielding his iconic vibranium shield, Captain America
+        serves as the moral compass and leader of the Avengers.
+      </p>
+    </div>
+    <div class="template" style="background-color: #f39237">
+      <p class="description">
+        <b>Iron Man (Tony Stark):</b>
+        A genius billionaire, inventor, and philanthropist who becomes a
+        superhero using his advanced, high-tech suit of armor. Tony Stark is the
+        brains and wit of the Avengers, bringing innovation and leadership to
+        the team.
+      </p>
+      <img
+        class="heroes"
+        src="./resources/ironMan.jpg"
+        alt="Iron man Image"
+        data-audio="resources/tony-stark-audio.mp3
+      "
+      />
+    </div>
+    <div class="template" style="background-color: #40bcd8">
+      <img
+        class="heroes"
+        src="./resources/thor.jpg"
+        alt="Thor Image"
+        data-audio="resources/bring-me-thanos.mp3"
+      />
+      <p class="description">
+        <b>Thor Odinson:</b>
+        The Norse God of Thunder from Asgard, wielding the enchanted hammer
+        Mjölnir. Thor is immensely powerful, with a commanding presence and a
+        blend of divine might and humor.
+      </p>
+    </div>
+    <div class="template" style="background-color: #1fbd80">
+      <p class="description">
+        <b>Hulk (Bruce Banner):</b>
+        A brilliant scientist with a tragic flaw—when angered, he transforms
+        into the unstoppable green giant known as the Hulk. He is the team's
+        powerhouse, capable of immense destruction and heroics.
+      </p>
+      <img
+        class="heroes"
+        src="./resources/the_incredible_hulk.jpeg"
+        alt="Hulk Image"
+        data-audio="resources/Im-always-angry.mp3"
+      />
+    </div>
+    <div class="template" style="background-color: #9e77fa">
+      <img
+        class="heroes"
+        src="./resources/hawkeye.jpg"
+        alt="Hawkeye Image"
+        data-audio="resources/Im clint.mp3"
+      />
+      <p class="description">
+        <b>Hawkeye (Clint Barton):</b>
+        A master archer with impeccable aim and a down-to-earth attitude. Armed
+        with a quiver of specialized arrows, Hawkeye brings precision and heart
+        to the Avengers.
+      </p>
+    </div>
+    <div class="template" style="background-color: #f1d76d">
+      <p class="description">
+        <b>Black Widow (Natasha Romanoff):</b>
+        A highly skilled spy, assassin, and martial artist with a mysterious
+        past. Natasha is known for her resourcefulness, intelligence, and
+        unwavering loyalty to her team.
+      </p>
+      <img
+        class="heroes"
+        src="./resources/black_widow.jpg"
+        alt="Black Widow Image"
+      />
+    </div>
+    <div class="x-men-title">THE X-MEN</div>
+    <div class="x-men">
+      <div class="column" style="background-color: #0c3b46">
+        <img
+          src="resources/Cyclops.jpg"
+          alt="image of Cyclops"
+          class="x-men-heroes"
+        />
+        <p class="x-men-description">
+          <span class="x-men-name">Cyclops</span>
+          Scott Summers is a mutant leader with the ability to emit powerful
+          optic blasts from his eyes. As the first member of the X-Men.
+        </p>
+      </div>
+      <div class="column" style="background-color: #0c463a">
+        <img
+          src="./resources/Storm.jpg"
+          alt="Image of Storm"
+          class="x-men-heroes"
+        />
+        <p class="x-men-description">
+          <span class="x-men-name">Storm</span>
+          Ororo Monroe is the descendant of an ancient line of African
+          priestesses, all of whom have white hair, blue eyes, and the potential
+          to wield magic.
+        </p>
+      </div>
+    </div>
+    <div class="x-men">
+      <div class="column" style="background-color: #8b0c0c">
+        <img
+          src="./resources/Beast.jpg"
+          alt="Image of Beast form x-men"
+          class="x-men-heroes"
+        />
+        <p class="x-men-description">
+          <span class="x-men-name">Beast</span>
+          Hank McCoy is a brilliant scientist and a mutant with superhuman
+          strength, agility, and ape-like physical features, including blue fur.
+          Despite his appearance.
+        </p>
+      </div>
+      <div class="column" style="background-color: #380b4e">
+        <img
+          src="./resources/Scarlet Witch.jpg"
+          alt="Image of the Scarlet Witch from x-men"
+          class="x-men-heroes"
+        />
+        <p class="x-men-description">
+          <span class="x-men-name">Scarlet Witch</span>
+          Wanda Maximoff is a mutant and sorceress with reality-warping
+          abilities. Her immense power and complex emotional struggles make her
+          both a formidable ally and a dangerous adversary.
+        </p>
+      </div>
+    </div>
+    <div class="x-men">
+      <div class="column" style="background-color: #a77c1a">
+        <img
+          src="./resources/rogue.jpg"
+          alt="Image of Rogue x-men character"
+          class="x-men-heroes"
+        />
+        <p class="x-men-description">
+          <span class="x-men-name">Rogue</span>
+          Anna Marie is a mutant who can absorb the memories, powers, and
+          abilities of others through touch, Rogue is a powerful and resourceful
+          member of the X-Men.
+        </p>
+      </div>
+      <div class="column" style="background-color: #961d1d">
+        <img
+          src="./resources/wolverine.jpg"
+          alt="Image of wolverine x-men character"
+          class="x-men-heroes"
+        />
+
+        <p class="x-men-description">
+          <span class="x-men-name">Wolverine</span>
+          Logan is a mutant with enhanced senses, a powerful healing factor, and
+          retractable claws coated with indestructible adamantium.
+        </p>
+      </div>
+    </div>
+
+    <!-- <embed
+      src="resources/hulk_intro.mp4"
+      type="video/mp4"
+      style="height: 500px"
+      width="24%"
+    /> -->
+  </body>
+</html>
